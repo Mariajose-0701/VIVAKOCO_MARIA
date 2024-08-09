@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #catalogo {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFFFFF;
+        }
+        
+        #carousel {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 300px; /* Ajusta según el tamaño deseado */
+        }
+        
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .carousel-wrapper {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-wrapper img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+        
+        #testimonios {
+            padding: 20px;
+            background-color: #FFFFFF;
+        }
+        
+        .testimonial {
+            margin-bottom: 20px;
+        }
+        
+        .testimonial p {
+            margin: 5px 0;
+        }
+    </style> 
+</head>
+<body>
+    <section id="catalogo">
+        <h1>Catálogo</h1>
+    </section>
+
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <img src="Imagenes/Buzo Amarillo.png.jpg" alt="Producto 1">
+                <img src="Imagenes/Camisa Basica 2.png" alt="Producto 2">
+                <img src="Imagenes/Tejida Blanca.png" alt="Producto 3">
+                <img src="Imagenes/Buzo Amarillo.png.jpg" alt="Producto 1">
+                <img src="Imagenes/Camisa Basica 2.png" alt="Producto 2">
+                <img src="Imagenes/Tejida Blanca.png" alt="Producto 3">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonial">
+            <p>"Excelente tienda, productos de calidad y atención increíble!"</p>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>- Juan Pérez</p>
+        </div>
+        <div class="testimonial">
+            <p>"Me encantó la variedad de ropa y el servicio al cliente."</p>
+            <p>⭐⭐⭐⭐</p>
+            <p>- María López</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración del carrusel
+            let index = 0;
+            const slides = document.querySelector('.carousel-wrapper');
+            const totalSlides = slides.children.length;
+            
+            function showNextSlide() {
+                index = (index + 1) % totalSlides;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            }
+            
+            setInterval(showNextSlide, 3000); // Cambiar de slide cada 3 segundos
+        });
+    </script>
+</body>
+</html>
